@@ -82,10 +82,6 @@ $ npm run dev
 
 This will start the server which will listen on port 3001. The server is connected to our MongoDB database using mongoose as the middleware.
 
-#### **MongoDB Login Details**
-
-**[redacted]**
-
 ## Version Control
 
 Used git-flow protocol in 3 parts:
