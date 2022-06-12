@@ -1,0 +1,31 @@
+.Store{
+    display: flex;
+    flex-direction: row;
+}
+
+.Title{
+    display: flex;
+    flex-direction: row;    
+    margin-left: 35vw;
+    
+}
+.Title .Storename{
+     text-align: center;
+     left: 50%;
+     font-size:32;
+
+}
+
+
+
+.Title .Add{
+    right: 50%;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+    border: transparent;
+    margin-left: 25vw;
+    background-color: rgb(19, 218, 12);
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}

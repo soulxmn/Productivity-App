@@ -1,0 +1,92 @@
+.Box {
+  padding: 2rem;
+}
+
+.Card {
+  box-sizing: border-box;
+  background-color: #1d1b5a;
+  border: black 5px;
+  height: 450px;
+  width: 350px;
+  border-radius: 10%;
+  margin-top: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+.LCard {
+  box-sizing: border-box;
+  background-color: #34343f;
+  border: black 5px;
+  height: 450px;
+  width: 350px;
+  border-radius: 10%;
+  margin-top: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+.Card :hover {
+  transform: scale(1.02);
+}
+
+.Card .image {
+  margin-top: 50px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 30px;
+}
+.LCard .image {
+  margin-top: 50px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.Card .Switch {
+  height: 50px;
+  position: relative;
+}
+
+.widgetname {
+  padding: 1rem;
+}
+
+.Card .widgetbutton {
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  background: transparent;
+  border-radius: 10%;
+  width: 200px;
+  height: 50px;
+}
+
+.selected .WidgetSelected {
+  background-color: aquamarine;
+}
+
+/* .Card .widgetbutton :hover{
+    transform: scale(1.02);
+    background-color: red;
+    color: white;
+} */
+
+/* .wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(12rem,16rem));
+    gap: 2rem
+    
+} */

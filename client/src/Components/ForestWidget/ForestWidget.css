@@ -1,0 +1,9 @@
+.widget {
+    box-sizing: border-box;
+    background-color: rgb(185, 113, 64);
+    border: black 5px;
+    height: auto;
+    width: 15vw;
+    border-radius: 10%;
+    margin-top: 100px;
+  }

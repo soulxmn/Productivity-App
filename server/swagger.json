@@ -1,0 +1,692 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Planner's Paradice API"
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/notes": {
+      "get": {
+        "tags": ["note"],
+        "summary": "List all of the user's Notes",
+        "description": "",
+        "operationId": "getNotes",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Note"
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": ["note"],
+        "summary": "Create a new Note",
+        "description": "",
+        "operationId": "createNote",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "formData",
+            "description": "title of the Note to create",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "formData",
+            "description": "contents of the Note to create",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "succesful operation",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/notes/{noteId}": {
+      "put": {
+        "tags": ["note"],
+        "summary": "Update Note by id",
+        "operationId": "updateNoteById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "formData",
+            "description": "value of the Note title to update",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "formData",
+            "description": "value of the Note contents to update",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            }
+          },
+          "400": {
+            "description": "invalid Note ID or data supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Note not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["note"],
+        "summary": "Delete Note by id",
+        "operationId": "deleteNoteById",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "invalid Note ID supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Note not found"
+          }
+        }
+      }
+    },
+    "/task": {
+      "get": {
+        "tags": ["task"],
+        "summary": "List all of the user's Tasks",
+        "description": "",
+        "operationId": "getTasks",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Task"
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": ["task"],
+        "summary": "Create a new Task",
+        "description": "",
+        "operationId": "createTask",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "name of the Task to create",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "completed",
+            "in": "formData",
+            "description": "whether or not the Task is already complete",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "priority",
+            "in": "formData",
+            "description": "the priority of the Task to create",
+            "required": false,
+            "type": "string",
+            "default": "MIDDLE",
+            "enum": ["VERY-HIGH", "HIGH", "MIDDLE", "LOW"]
+          },
+          {
+            "name": "completedDate",
+            "in": "formData",
+            "description": "the date on which this Task was completed",
+            "required": false,
+            "type": "string",
+            "default": null,
+            "format": "date"
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "succesful operation",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/task/{taskId}": {
+      "get": {
+        "tags": ["task"],
+        "summary": "Get Task by id",
+        "operationId": "getTaskById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "description": "id of Task to return",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "400": {
+            "description": "invalid Task ID supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Task not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["task"],
+        "summary": "Update Task by id",
+        "operationId": "updateTaskById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "name of the Task to create",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "completed",
+            "in": "formData",
+            "description": "whether or not the Task is already complete",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "priority",
+            "in": "formData",
+            "description": "the priority of the Task to create",
+            "required": false,
+            "type": "string",
+            "enum": ["VERY-HIGH", "HIGH", "MIDDLE", "LOW"]
+          },
+          {
+            "name": "completedDate",
+            "in": "formData",
+            "description": "the date on which this Task was completed",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "400": {
+            "description": "invalid Task ID or data supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Task not found"
+          }
+        }
+      }
+    },
+    "/project": {
+      "get": {
+        "tags": ["project"],
+        "summary": "List all of the user's Projects",
+        "description": "",
+        "operationId": "getProjects",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Project"
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": ["project"],
+        "summary": "Create a new Project",
+        "description": "",
+        "operationId": "createProject",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "projectName",
+            "in": "formData",
+            "description": "name of the Project to create",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dueDate",
+            "in": "formData",
+            "description": "the due date of this Project (separate and independent of its Tasks)",
+            "required": true,
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "succesful operation",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/project/{projectId}": {
+      "patch": {
+        "tags": ["project"],
+        "summary": "Update Project by id",
+        "operationId": "updateProjectById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "projectName",
+            "in": "formData",
+            "description": "name of the Project to create",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dueDate",
+            "in": "formData",
+            "description": "the due date of this Project (separate and independent of its Tasks)",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          },
+          "400": {
+            "description": "invalid Project ID or data supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Project not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["project"],
+        "summary": "Delete Project by id (and all of its associated tasks)",
+        "operationId": "deleteProjectById",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "invalid Project ID or data supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Project not found"
+          }
+        }
+      }
+    },
+    "/project/checkComplete/{projectId}": {
+      "post": {
+        "tags": ["project"],
+        "summary": "Update the Project's completion status by id",
+        "operationId": "updateProjectCompletionStatis",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "invalid Project ID or data supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Project not found"
+          }
+        }
+      }
+    },
+    "/weather/{publicIP}": {
+      "get": {
+        "tags": ["weather"],
+        "summary": "Retrieve the weather forecast for the Public IP",
+        "description": "",
+        "operationId": "getWeatherForecast",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "day": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "iconUrl": {
+                    "type": "string",
+                    "format": "url"
+                  },
+                  "maxTemp": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "minTemp": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "conditionText": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "tags": ["user"],
+        "summary": "Get the currently authenticated User",
+        "description": "",
+        "operationId": "getUser",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["user"],
+        "summary": "Update the currently authenticated User",
+        "description": "",
+        "operationId": "updateUser",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "points",
+            "in": "formData",
+            "description": "the new number of points to be associated with the User",
+            "required": false,
+            "type": "number",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "invalid data supplied"
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "task",
+      "description": "an individual Task which the user complete(s/d)"
+    },
+    {
+      "name": "note",
+      "description": "an individual Note whcih the user creates for themselves"
+    },
+    {
+      "name": "project",
+      "description": "a collection of 0 or more Tasks which the user wants to group together"
+    },
+    {
+      "name": "weather",
+      "description": "the weather forecast"
+    },
+    {
+      "name": "user",
+      "description": "a User registered with the application"
+    }
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "X-API-Key",
+      "description": "contains the User's id",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Task": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "the id of the User who created this Task"
+        },
+        "name": {
+          "type": "string",
+          "description": "the name of the Task"
+        },
+        "completed": {
+          "type": "boolean",
+          "description": "whether or not the Task is complete"
+        },
+        "completedDate": {
+          "type": "string",
+          "format": "date",
+          "description": "the date on which the Task was completed"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["VERY-HIGH", "HIGH", "MIDDLE", "LOW"]
+        },
+        "relatedProject": {
+          "type": "string",
+          "description": "the id of the Project associated with this Task",
+          "nullable": true
+        }
+      }
+    },
+    "Note": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "the id of the User who created this Node"
+        },
+        "title": {
+          "type": "string",
+          "description": "the title of this Note"
+        },
+        "content": {
+          "type": "string",
+          "description": "the contents of this Note"
+        }
+      }
+    },
+    "Project": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "the unique identifier of this Project"
+        },
+        "uid": {
+          "type": "string",
+          "description": "the email address of the User who created this Project"
+        },
+        "projectName": {
+          "type": "string",
+          "description": "the name of the Project"
+        },
+        "dueDate": {
+          "type": "string",
+          "format": "date",
+          "description": "the due date of the Project (separate and independent of any related Tasks)"
+        },
+        "completionStatus": {
+          "type": "number",
+          "format": "double",
+          "description": "the completion status of the Project, as a float between 0 (no tasks completed) and 1 (all tasks completed)"
+        },
+        "complete": {
+          "type": "boolean",
+          "description": "whether or not this Project is complete (all tasks completed)"
+        },
+        "relatedTasks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "the id of the Task associated with this Project"
+          }
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "the unique identifier of this User"
+        },
+        "tenant": {
+          "type": "string",
+          "description": "the Auth0 tenant identifier with which this User is associated"
+        },
+        "connection": {
+          "type": "string",
+          "description": "the Auth0 connection with which this User is associated"
+        },
+        "password": {
+          "type": "string",
+          "format": "password",
+          "description": "the SHA256 hash of this User's password"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "the User's email address (which also uniquely identifies them)"
+        },
+        "points": {
+          "type": "number",
+          "format": "int32",
+          "description": "the number of points this User has accumulated"
+        },
+        "completedProjects": {
+          "type": "number",
+          "format": "int32",
+          "description": "the number of Projects this User has completed"
+        }
+      }
+    }
+  }
+}
