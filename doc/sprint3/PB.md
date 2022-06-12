@@ -1,5 +1,5 @@
 # Sprint 3 Product Backlog
-Completed tasks from Sprints 1 and 2 have been tagged. There are no new **user** story additions this sprint.
+Completed tasks from Sprints 1 and 2 have been tagged. There were no new **user** story additions this sprint.
 
 ## User Stories:
 1. **\[COMPLETED\]** As Lisa, a basic user, a basic user, I want to be able to register for an account, this way I can keep my tasks private.
