@@ -17,9 +17,7 @@ const swaggerUi = require("swagger-ui-express"),
   swaggerDocument = require("./swagger.json");
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-mongoose.connect(
-  "mongodb+srv://nilabh:Plannersparadice301@cluster0.vlyn1.mongodb.net/planners-paradice-database?retryWrites=true&w=majority"
-);
+//mongoose.connect() line has been redacted.
 
 async function checkComplete(projectId) {
   var relatedTasks = [];
