@@ -51,14 +51,3 @@ Finally for the third and final epic, the **release goal** here is to ensure tha
 | Story: Layout and design of the app's UI is reconsidered one final time to optimize usability after having added all the features. | Story: Exhaustive Q/A full-scope unit tests are created, to ensure all the parts work together before adding each nice-to-have feature. | Story: Team presents finished product to course instructors/TAs.|   
 | US#10: Spending points on widgets in the store. | US#11: Weather widget is functional. | US#12: Background/banner/theme/aesthetic customization. | 
 | US#13: Music player integration. | US#20: Visual indicator of past projects completed to motivate user. | Story: Review documentation to ensure user will not be confused on how to proceed at different stages.
-
-
-## The Participants
-The finalized team/the participants involved with the release planning meeting were:
-* Suleiman Mirza
-* Nilabh Anand
-* Zhaoyu Guo
-* Vishnu Manoj
-* Asad Durrani
-* Aidan Britnell
-* Jackson Joseph Hoogenboom
