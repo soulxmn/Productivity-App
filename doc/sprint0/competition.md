@@ -1,4 +1,4 @@
-In this document, we’ll look at some other products in the productivity app space and see how they compare to the app we want to make.
+In this document, we look at some other products in the productivity app space and see how they compare to the app we want to make.
 
 # Tick Tick
 This app offers daily task and habit scheduling with a notification system. There is also a very convenient system in place which allows users to turn e-mails into tasks; each user is given a unique ticktick e-mail address which they can forward e-mails to that are then automatically turned into tasks. The app also takes care of times automatically, such as “tomorrow at 4pm”, and sets a reminder for you. The app also allows users to manually add tags to their tasks such as “urgent”, “delayed”, and one can filter tasks by these tags or by date. Users can share their tasks along with their notes, tables, lists, etc. with other users of the app.
