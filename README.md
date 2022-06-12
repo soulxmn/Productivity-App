@@ -84,7 +84,7 @@ This will start the server which will listen on port 3001. The server is connect
 
 #### **MongoDB Login Details**
 
-Login details have been [redacted].
+**[redacted]**
 
 ## Version Control
 
