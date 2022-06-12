@@ -1,5 +1,5 @@
 # Sprint 4 Product Backlog
-Completed tasks from Sprints 1, 2, and 3 have been tagged. There is 1 new user story, and 1 new developer story this sprint (marked accordingly).
+Completed tasks from Sprints 1, 2, and 3 have been tagged. There is 1 new user story, and 1 new developer story this sprint (marked below).
 
 ## User Stories:
 1. **\[COMPLETED\]** As Lisa, a basic user, a basic user, I want to be able to register for an account, this way I can keep my tasks private.
