@@ -1,7 +1,7 @@
 # Release Planning Meeting
 
 ## The Release Goal
-We aim to provide a fully functional and feature-rich productivity homepage/toolset for Google Chrome as a browser extension, that users can start their day with and use 
+The aim is to provide a fully functional and feature-rich productivity homepage/toolset for Google Chrome as a browser extension, that users can start their day with and use 
 throughout to stay updated with their schedule. 
 
 The experience will be gamified - points will be alotted for completing tasks on-time. These points will unlock unique features such as music integration, social media
