@@ -1,10 +1,6 @@
 # Introduction
 This document will show case the UX/UI designs created by the team to indicate the intended vision of the final product.
 
-The Figma link for these mock-ups is here: https://www.figma.com/file/Os65tKuUui7ejxiZScmS7W/Untitled?node-id=0%3A1 
-
-The Imgur link for the high-fidelity wireframe is here: https://imgur.com/a/ED2H9wi
-
 # Dashboard Mock-Up
 Below is a quick layout of the main/home page, which pops up whenever a user opens a new tab in the Google Chrome web browser (or launches the program).
 
