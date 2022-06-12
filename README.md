@@ -8,7 +8,7 @@ A gamified productivity chrome extension provides users with a robust environmen
 
 ## Required tools
 
-We will use the MERN stack for this project, consisting of MongoDB, ExpressJS, React and NodeJs for our server.
+We will use the MERN stack for this project, consisting of MongoDB, ExpressJS, React.JS and Node.JS.
 
 ### **NodeJs**
 
@@ -47,7 +47,7 @@ $ npm -v
 7.20.3
 ```
 
-We also have to set up our NodeJS server and install expressJs to our project.
+Set up the NodeJS server and install expressJS to the project:
 
 ```
 $ cd server
@@ -56,11 +56,11 @@ $ nodemon index.js
 
 #### **Note**
 
-after you git pull on the repo, you must run `npm install` on the directory that `server` was created to ensure you install all the packages on your local machine!
+Having git pull-ed the repo, run `npm install` on the directory that `server` was created to ensure you install all the packages on your local machine.
 
 ### **Client - React App**
 
-**Cross-platform**: these instructions are the same for all platforms
+**Cross-platform**: These instructions are the same for all platforms
 
 ```
 $ cd client
@@ -84,33 +84,20 @@ This will start the server which will listen on port 3001. The server is connect
 
 #### **MongoDB Login Details**
 
-This is the login details for the [MongoDB Dashboard](https://www.mongodb.com/).
+Login details have been [redacted].
 
-```
-Email: Nilabh.anand@mail.Utoronto.ca
-Password: Plannersparadice301
-```
+## Version Control
 
-## Contribution
-
-For our project, we will use the git-flow protocol. We will divide our projects into three parts:
+Used git-flow protocol in 3 parts:
 
 1. Release branch
-2. The development branch
-3. The feature branches
-
-### Naming the feature branches
-
-We must name the feature branches after the user stories to ensure we all know what features we are working on. (feat/todo-list)
+2. Development branch
+3. Feature branches.
 
 ### Pull Requests
 
-Group members will submit a pull request for each feature/subtask. After, at least two team members can review the code, approve it, and push it to the main and release branches.
-
-Before testing, new feature branches must contain the latest codebase from the development branch.
-
-Do not place any codebase from the development branch until the end of the sprint.
+Group members will submit a pull request for each feature/subtask. After, at least two team members can review the code, approve it, and push it to the main and release branches. Before testing, new feature branches must contain the latest codebase from the development branch.
 
 ## Ticketing System
 
-We will be using Jira
+Handled on Jira.
