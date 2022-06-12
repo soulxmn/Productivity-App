@@ -1,4 +1,4 @@
-This is the updated Product Backlog for Sprint 2. Completed tasks FROM SPRINT 1 have been included and tagged, as have been new additions.
+This is the updated Product Backlog for Sprint 2. Completed tasks FROM SPRINT 1 have been included and tagged, as have been new additions below.
 
 # User Stories:
 1. **\[COMPLETED\]** As Lisa, a basic user, a basic user, I want to be able to register for an account, this way I can keep my tasks private.
