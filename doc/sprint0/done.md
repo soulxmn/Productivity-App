@@ -1,5 +1,5 @@
 # Definition of Done:
-To be done means the following:
+This means the following:
 
 * Code has been written and has been implemented to the corresponding requirements of the user story. Such that the desired task in the user story can now be completed using the software.
 
